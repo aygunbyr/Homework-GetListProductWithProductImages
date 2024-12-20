@@ -35,6 +35,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
 
         builder.Navigation(x => x.SubCategory).AutoInclude();
+        builder.Navigation(x => x.ProductImages).AutoInclude();
         builder.HasQueryFilter(p => !p.DeletedDate.HasValue);
     }
 }

@@ -24,5 +24,13 @@ public class ProductsController(IMediator mediator) : BaseController
 
         return Ok(response);
     }
-    
+
+    [HttpGet("getallbyimages")]
+    public async Task<IActionResult> GetAllByImages()
+    {
+        var response = await mediator.Send(new GetListProductByImagesQuery());
+
+        return Ok(response);
+    }
+
 }
